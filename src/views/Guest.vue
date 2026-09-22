@@ -5,80 +5,25 @@
           :class="isScrolled 
           ? 'bg-white shadow-md text-black' 
           : 'bg-transparent text-white'">
-          <div class="relative z-60 flex items-center justify-between px-5 py-3 lg:justify-center lg:py-2 lg:gap-100"
-          :class="mobileMenuOpen ? 'shadow-sm' : ''">
+          <div class="flex items-center justify-between px-5 py-3 lg:justify-center lg:py-2 lg:gap-100">
               <div><img src="/public/images/covenant-logo.jpg" alt="" class=" w-12 lg:w-17"></div>
               <div class="flex items-center gap-10 px-1">
                   <div class="hidden lg:flex gap-8 font-bold">
                       <a href="" class="hover:text-[#eb81cd] transition hover:scale-103">Home</a>
-                      <a href="" class="hover:text-[#eb81cd] transition hover:scale-103">About</a>
+                      <a href="/about" class="hover:text-[#eb81cd] transition hover:scale-103">About</a>
                       <a href="" class="hover:text-[#eb81cd] transition hover:scale-103">Admission</a>
                       <a href="" class="hover:text-[#eb81cd] transition hover:scale-103">Academics</a>
-                      <a href="/contact" class="hover:text-[#eb81cd] transition hover:scale-103">Contacts</a>
+                      <a href="" class="hover:text-[#eb81cd] transition hover:scale-103">Contacts</a>
                   </div>
                   <div class="hidden lg:flex bg-linear-to-r from-[#eb81cd] to-[#942173] rounded-[5px] px-4 py-1 
                   shadow-lg hover:scale-103 hover:to-[#6b064e]">
                       <a href="" class="font-bold text-white transition">Apply</a>
                   </div>
                   <div class="lg:hidden">
-                    <button type="button" @click="mobileMenuOpen = !mobileMenuOpen" aria-label="Toggle menu" 
-                    :aria-expanded="mobileMenuOpen">
-                    <i :class="[mobileMenuOpen ? 'fa fa-navicon text-black' : 'fa fa-navicon text-current']" 
-                    style="font-size:25px"></i>
-                    </button>
+                      <i class="fa fa-navicon" style="font-size:25px"></i>
                  </div>
               </div>
           </div>
-
-          <!-- Backdrop overlay -->
-          <Transition
-              enter-active-class="transition-opacity duration-300"
-              enter-from-class="opacity-0"
-              enter-to-class="opacity-100"
-              leave-active-class="transition-opacity duration-300"
-              leave-from-class="opacity-100"
-              leave-to-class="opacity-0"
-          >
-              <div
-                  v-if="mobileMenuOpen"
-                  class="lg:hidden fixed inset-0 bg-black/40 z-40"
-                  @click="mobileMenuOpen = false"
-              ></div>
-          </Transition>
-
-          <!-- Mobile side drawer -->
-          <Transition
-              enter-active-class="transition-transform duration-300 ease-out"
-              enter-from-class="translate-y-full"
-              enter-to-class="translate-y-0"
-              leave-active-class="transition-transform duration-300 ease-in"
-              leave-from-class="translate-y-0"
-              leave-to-class="translate-y-full"
-          >
-              <div
-                  v-if="mobileMenuOpen"
-                  class="lg:hidden fixed top-0 right-0 h-screen w-full bg-white text-black flex flex-col gap-1 px-3
-                   py-8 font-bold shadow-lg z-50">
-                 <div class="flex flex-col gap-1 py-11 h-full">
-                     <a href="" class="py-5 px-2 hover:text-[#eb81cd] border-b border-gray-300 transition" 
-                     @click="mobileMenuOpen = false">Home</a>
-                     <a href="" class="py-5 px-2 hover:text-[#eb81cd] border-b border-gray-300 transition" @click="mobileMenuOpen =
-                      false">About</a>
-                     <a href="" class="py-5 px-2 hover:text-[#eb81cd] border-b border-gray-300 transition" @click="mobileMenuOpen = 
-                     false">Admission</a>
-                     <a href="" class="py-5 px-2 hover:text-[#eb81cd] border-b border-gray-300 transition" @click="mobileMenuOpen = 
-                     false">Academics</a>
-                     <a href="/contact" class="py-5 px-2 hover:text-[#eb81cd] transition" @click="mobileMenuOpen = 
-                     false">Contacts</a>
-                     <a href=""
-                         class="mt-auto inline-block text-center text-[#942173] hover:bg-[#942173] hover:text-white 
-                         rounded-[5px] 
-                         px-4 py-2 font-semibold border shadow-lg" @click="mobileMenuOpen = false">
-                         Apply Now
-                     </a>
-                 </div>
-              </div>
-          </Transition>
       </nav>
   
       <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -120,7 +65,6 @@
         </div>
       </section>
   
-      <!-- section11 -->
       <section>
           <section>
              <div class="flex flex-col p-5 lg:flex-row justify-center gap-20 lg:px-20 mt-25 mb-30 bg-pink-50">
@@ -134,8 +78,8 @@
                            academically, but in character, faith, and readiness for the world ahead of them, wherever that 
                            world may take them.
                         </p>
-                        <p>Our doors welcome children from their very first years of school right through to secondary 
-                            level, offering one continuous path of learning and personal growth.
+                        <p>Our doors welcome children from their very first years of school right through to secondary level, 
+                           offering one continuous path of learning and personal growth.
                         </p>
                    </div>
                </div>
@@ -177,7 +121,7 @@
                             <span>DJ</span>
                           </div>
                           <div class="text-start">
-                              <h1 class="font-bold text-[#95357a] text-[15px]">David Joseph</h1>
+                              <h1 class="font-bold text-[15px]">David Joseph</h1>
                               <p class="text-[15px] font-semibold text-gray-600">Parent, Covenant International School</p>
                           </div>
                       </div>
@@ -195,7 +139,7 @@
                             <span>DJ</span>
                           </div>
                           <div class="text-start">
-                              <h1 class="font-bold text-[#95357a] text-[15px]">David Joseph</h1>
+                              <h1 class="font-bold text-[15px]">David Joseph</h1>
                               <p class="text-[15px] font-semibold text-gray-600">Parent, Covenant International School</p>
                           </div>
                       </div>
@@ -213,7 +157,7 @@
                             <span>DJ</span>
                           </div>
                           <div class="text-start">
-                              <h1 class="font-bold text-[#95357a] text-[15px]">David Joseph</h1>
+                              <h1 class="font-bold text-[15px]">David Joseph</h1>
                               <p class="text-[15px] font-semibold text-gray-600">Parent, Covenant International School</p>
                           </div>
                       </div>
@@ -376,7 +320,7 @@
                           </div>
                       </div>
                       <div class="text-start mt-4">
-                          <a href="" class=" border border-red-300 rounded-[5px] py-1 px-2 text-[13px] text-red-300
+                          <a href="" class=" border border-red-300 rounded-[5px] py-1 px-2 text-[13px] text-red-300 
                           font-semibold
                           hover:bg-[#942173] hover:border-[#95357a] hover:text-white transition">Learn More →</a>
                       </div>
@@ -465,7 +409,6 @@
   import { ref, onMounted, onUnmounted } from 'vue'
   
   const isScrolled = ref(false)
-  const mobileMenuOpen = ref(false)
   
   const handleScroll = () => {
       isScrolled.value = window.scrollY > 50
@@ -505,7 +448,7 @@
   // ---------- FAQ accordion ----------
   const openFaq = ref(null)
   
-  const faqs =      [
+  const faqs = [
       {
           question: 'What age can my child start at Covenant International School?',
           answer: 'We welcome children from as early as 1 year old in our Creche, right through to Secondary school, ' +
