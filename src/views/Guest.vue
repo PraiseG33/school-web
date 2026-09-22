@@ -60,7 +60,7 @@
                   v-if="mobileMenuOpen"
                   class="lg:hidden fixed top-0 right-0 h-screen w-full bg-white text-black flex flex-col gap-1 px-3
                    py-8 font-bold shadow-lg z-50">
-                 <div class="flex flex-col gap-1 py-11 text-[19px] h-full">
+                 <div class="flex flex-col gap-1 py-11 h-full">
                      <a href="" class="py-5 px-2 hover:text-[#eb81cd] border-b border-gray-300 transition" 
                      @click="mobileMenuOpen = false">Home</a>
                      <a href="" class="py-5 px-2 hover:text-[#eb81cd] border-b border-gray-300 transition" @click="mobileMenuOpen = false">About</a>
@@ -613,7 +613,7 @@
           <div class="mb-5 flex flex-col px-5 lg:flex-row justify-center lg:mb-15 lg:px-20 py-10 gap-5">
 
               <div
-                  class="shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
+                  class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
                   :class="activePress === 'process-1' ? 'border-[#6b064e] scale-103 shadow-lg' : ''"
                   @mousedown="startPress('process-1')"
                   @touchstart="startPress('process-1')"
@@ -677,7 +677,7 @@
 
 
               <div
-                  class="shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
+                  class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
                   :class="activePress === 'process-2' ? 'border-[#6b064e] scale-103 shadow-lg' : ''"
                   @mousedown="startPress('process-2')"
                   @touchstart="startPress('process-2')"
@@ -741,7 +741,7 @@
 
 
               <div
-                  class="shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
+                  class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
                   :class="activePress === 'process-3' ? 'border-[#6b064e] scale-103 shadow-lg' : ''"
                   @mousedown="startPress('process-3')"
                   @touchstart="startPress('process-3')"
@@ -801,7 +801,7 @@
               </div>
 
               <div
-                  class="shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
+                  class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
                   :class="activePress === 'process-4' ? 'border-[#6b064e] scale-103 shadow-lg' : ''"
                   @mousedown="startPress('process-4')"
                   @touchstart="startPress('process-4')"
