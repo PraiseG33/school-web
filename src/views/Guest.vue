@@ -6,7 +6,7 @@
           ? 'bg-white shadow-md text-black' 
           : 'bg-transparent text-white'">
           <div class="flex items-center justify-between px-5 py-3 lg:justify-center lg:py-2 lg:gap-100">
-              <div><img src="/public/images/covenant-logo.jpg" alt="" class=" w-12 lg:w-17"></div>
+              <div><img src="/src/assets/images/covenant-logo.jpg" alt="" class=" w-12 lg:w-17"></div>
               <div class="flex items-center gap-10 px-1">
                   <div class="hidden lg:flex gap-8 font-bold">
                       <a href="" class="hover:text-[#eb81cd] transition hover:scale-103">Home</a>
@@ -85,7 +85,7 @@
                </div>
                <div class="lg:flex-1">
                     <video 
-                       src="/public/images/The Cavemen - Me You I _ Selense Medley (Live Performance) _ Glitch Take Off.mp4" 
+                       src="/src/assets/images/The Cavemen - Me You I _ Selense Medley (Live Performance) _ Glitch Take Off.mp4" 
                        class="w-full h-auto rounded-[20px] p-2"
                        controls>
                     </video>
@@ -176,7 +176,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2 gap-5 p-6 lg:p-15">
   
           <div class="group relative overflow-hidden rounded-lg h-64 lg:h-70">
-              <img src="/public/images/Children1.jpg" alt="" class="w-full h-full object-cover 
+              <img src="/src/assets/images/Children1.jpg" alt="" class="w-full h-full object-cover 
               transition-transform duration-500 group-hover:scale-110">
               <div class="absolute inset-0 bg-linear-to-t from-[#942173]/40 via-[#eb81cd]/10 to-transparent 
               opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
@@ -186,7 +186,7 @@
           </div>
   
           <div class="group relative overflow-hidden rounded-lg h-64 lg:h-full lg:row-span-2">
-              <img src="/public/images/Children2.jpg" alt="" class="w-full h-full object-cover transition-transform 
+              <img src="/src/assets/images/Children2.jpg" alt="" class="w-full h-full object-cover transition-transform 
               duration-500 group-hover:scale-110">
               <div class="absolute inset-0 bg-linear-to-t from-[#942173]/40 via-[#eb81cd]/10 to-transparent opacity-0 
               group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
@@ -198,7 +198,7 @@
           </div>
   
           <div class="group relative overflow-hidden rounded-lg h-64 lg:h-70">
-              <img src="/public/images/Children3.jpg" alt="" class="w-full h-full object-cover transition-transform 
+              <img src="/src/assets/images/Children3.jpg" alt="" class="w-full h-full object-cover transition-transform 
               duration-500 group-hover:scale-110">
               <div class="absolute inset-0 bg-linear-to-t from-[#942173]/40 via-[#eb81cd]/10 to-transparent opacity-0 
               group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
@@ -208,7 +208,7 @@
           </div>
   
           <div class="group relative overflow-hidden rounded-lg h-64 lg:h-70">
-              <img src="/public/images/Children4.jpg" alt="" class="w-full h-full object-cover transition-transform 
+              <img src="/src/assets/images/Children4.jpg" alt="" class="w-full h-full object-cover transition-transform 
               duration-500 group-hover:scale-110">
               <div class="absolute inset-0 bg-linear-to-t from-[#942173]/40 via-[#eb81cd]/10 to-transparent opacity-0 
               group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
@@ -218,7 +218,7 @@
           </div>
   
           <div class="group relative overflow-hidden rounded-lg h-64 lg:h-70">
-              <img src="/public/images/Children 5.jpg" alt="" class="w-full h-full object-cover transition-transform 
+              <img src="/src/assets/images/Children 5.jpg" alt="" class="w-full h-full object-cover transition-transform 
               duration-500 group-hover:scale-110">
               <div class="absolute inset-0 bg-linear-to-t from-[#942173]/40 via-[#eb81cd]/10 to-transparent opacity-0 
               group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
@@ -240,7 +240,7 @@
           <div class="mb-5 flex flex-col px-5 lg:flex-row justify-center lg:mb-15 lg:px-20 py-10 gap-5">
               <div class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] transition hover:scale-103">
                   <div class="lg:w-60">
-                      <img src="/public/images/Children3.jpg" alt="" class="rounded-xl">
+                      <img src="/src/assets/images/Children3.jpg" alt="" class="rounded-xl">
                   </div>
                   <p class="text-start mt-5 text-red-300 font-semibold text-[12px]">
                       AGES 1-2
@@ -262,7 +262,7 @@
               </div>
               <div class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] transition hover:scale-103">
                   <div class="lg:w-60">
-                      <img src="/public/images/Children3.jpg" alt="" class="rounded-xl">
+                      <img src="/src/assets/images/Children3.jpg" alt="" class="rounded-xl">
                   </div>
                   <p class="text-start mt-5 text-red-300 font-semibold text-[12px]">
                       AGES 3-5
@@ -284,7 +284,7 @@
               </div>
               <div class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] transition hover:scale-103">
                   <div class="lg:w-60">
-                      <img src="/public/images/Children3.jpg" alt="" class="rounded-xl">
+                      <img src="/src/assets/images/Children3.jpg" alt="" class="rounded-xl">
                   </div>
                   <p class="text-start mt-5 text-red-300 font-semibold text-[12px]">
                       AGES 6-10
@@ -306,7 +306,7 @@
               </div>
               <div class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] transition hover:scale-103">
                   <div class="lg:w-60">
-                      <img src="/public/images/Children3.jpg" alt="" class="rounded-xl">
+                      <img src="/src/assets/images/Children3.jpg" alt="" class="rounded-xl">
                   </div>
                   <p class="text-start mt-5 text-red-300 font-semibold text-[12px]">
                       AGES 11-16
@@ -372,7 +372,7 @@
   <section>
       <div class="flex-col flex px-5 lg:flex-row gap-2 justify-evenly bg-[#6b064e] mt-25 py-10 pb-20">
           <div>
-              <img src="/public/images/covenant-logo.jpg" alt="" class="w-25">
+              <img src="/src/assets/images/covenant-logo.jpg" alt="" class="w-25">
           </div>
           <div class="text-white leading-7">
               <h1 class="font-bold text-[17px]">Contact</h1>
@@ -416,8 +416,8 @@
   
   
   const bgImages = [
-      '/public/images/school.jpg',
-      '/public/images/lab-covenant.jpg'
+      '/src/assets/images/school.jpg',
+      '/src/assets/images/lab-covenant.jpg'
   ]
   const activeImage = ref(0)
   let bgInterval = null
