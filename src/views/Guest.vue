@@ -120,6 +120,7 @@
         </div>
       </section>
   
+      <!-- section -->
       <section>
           <section>
              <div class="flex flex-col p-5 lg:flex-row justify-center gap-20 lg:px-20 mt-25 mb-30 bg-pink-50">
