@@ -67,10 +67,20 @@
                      <a href="" class="py-5 px-2 hover:text-[#eb81cd] border-b border-gray-300 transition" @click="mobileMenuOpen = false">Admission</a>
                      <a href="" class="py-5 px-2 hover:text-[#eb81cd] border-b border-gray-300 transition" @click="mobileMenuOpen = false">Academics</a>
                      <a href="/contact" class="py-5 px-2 hover:text-[#eb81cd] transition" @click="mobileMenuOpen = false">Contacts</a>
-                     <a href=""
+                     <a
+                         href=""
                          class="mt-auto inline-block text-center text-[#942173] hover:bg-[#942173] hover:text-white 
                          rounded-[5px] 
-                         px-4 py-2 font-semibold border shadow-lg" @click="mobileMenuOpen = false">
+                         px-4 py-2 font-semibold border shadow-lg"
+                         :class="activePress === 'btn-apply-mobile' ? 'bg-[#942173] text-white' : ''"
+                         @mousedown="startPress('btn-apply-mobile')"
+                         @touchstart="startPress('btn-apply-mobile')"
+                         @mouseup="cancelPress"
+                         @mouseleave="cancelPress"
+                         @touchend="cancelPress"
+                         @touchcancel="cancelPress"
+                         @click="mobileMenuOpen = false"
+                     >
                          Apply Now
                      </a>
                  </div>
@@ -109,7 +119,15 @@
             <a
               href=""
               class="inline-block px-6 py-4 bg-linear-to-r from-[#95357a] to-blue-00 text-white rounded-lg 
-              hover:to-[#6b064e] font-semibold hover:scale-105 transition-all shadow-lg">
+              hover:to-[#6b064e] font-semibold hover:scale-105 transition-all shadow-lg"
+              :class="activePress === 'btn-hero-cta' ? 'scale-105 to-[#6b064e]' : ''"
+              @mousedown="startPress('btn-hero-cta')"
+              @touchstart="startPress('btn-hero-cta')"
+              @mouseup="cancelPress"
+              @mouseleave="cancelPress"
+              @touchend="cancelPress"
+              @touchcancel="cancelPress"
+            >
               APPLY FOR ADMISSION
             </a>  
           </div>
@@ -173,7 +191,16 @@
 
           <div class="flex flex-col px-5 lg:flex-row justify-center mb-20 lg:px-20 py-10 gap-5">
 
-              <div class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] transition">
+              <div
+                  class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] hover:scale-105 hover:shadow-lg transition-all duration-500"
+                  :class="activePress === 'testimonial-1' ? 'border-[#6b064e] scale-105 shadow-lg' : ''"
+                  @mousedown="startPress('testimonial-1')"
+                  @touchstart="startPress('testimonial-1')"
+                  @mouseup="cancelPress"
+                  @mouseleave="cancelPress"
+                  @touchend="cancelPress"
+                  @touchcancel="cancelPress"
+              >
 
                   <p class="text-start">
 
@@ -211,7 +238,16 @@
 
 
 
-              <div class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] transition">
+              <div
+                  class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] hover:scale-105 hover:shadow-lg transition-all duration-500"
+                  :class="activePress === 'testimonial-2' ? 'border-[#6b064e] scale-105 shadow-lg' : ''"
+                  @mousedown="startPress('testimonial-2')"
+                  @touchstart="startPress('testimonial-2')"
+                  @mouseup="cancelPress"
+                  @mouseleave="cancelPress"
+                  @touchend="cancelPress"
+                  @touchcancel="cancelPress"
+              >
 
                   <p class="text-start">
 
@@ -249,7 +285,16 @@
 
 
 
-              <div class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] transition">
+              <div
+                  class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] hover:scale-105 hover:shadow-lg transition-all duration-500"
+                  :class="activePress === 'testimonial-3' ? 'border-[#6b064e] scale-105 shadow-lg' : ''"
+                  @mousedown="startPress('testimonial-3')"
+                  @touchstart="startPress('testimonial-3')"
+                  @mouseup="cancelPress"
+                  @mouseleave="cancelPress"
+                  @touchend="cancelPress"
+                  @touchcancel="cancelPress"
+              >
 
                   <p class="text-start">
 
@@ -305,26 +350,21 @@
 
 
 
-      <div
-
-        class="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2 gap-5 p-6 lg:p-15"
-
-        @click.self="activeGallery = null"
-
-      >
+      <div class="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2 gap-5 p-6 lg:p-15">
 
 
 
           <!-- IMAGE 1 -->
 
           <div
-
-              class="gallery-card group relative overflow-hidden rounded-lg h-64 lg:h-70 border-2 border-transparent transition-all duration-500"
-
-              :class="activeGallery === 1 ? 'border-[#eb81cd]' : ''"
-
-              @click.stop="selectGallery(1)"
-
+              class="gallery-card group relative overflow-hidden rounded-lg h-64 lg:h-70 border-2 border-transparent hover:border-[#eb81cd] transition-all duration-500"
+              :class="activePress === 'gallery-1' ? 'border-[#eb81cd]' : ''"
+              @mousedown="startPress('gallery-1')"
+              @touchstart="startPress('gallery-1')"
+              @mouseup="cancelPress"
+              @mouseleave="cancelPress"
+              @touchend="cancelPress"
+              @touchcancel="cancelPress"
           >
 
               <img
@@ -335,7 +375,7 @@
 
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
 
-                  :class="activeGallery === 1 ? 'scale-110' : 'scale-100'"
+                  :class="activePress === 'gallery-1' ? 'scale-110' : 'scale-100'"
 
               >
 
@@ -343,19 +383,11 @@
 
                   class="absolute inset-0 bg-linear-to-t from-[#942173]/40 via-[#eb81cd]/10 to-transparent
 
-                  opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4"
-
-                  :class="activeGallery === 1 ? 'opacity-100' : 'opacity-0'"
+                  opacity-100 flex items-end p-4"
 
               >
 
-                  <p
-
-                      class="text-white text-sm font-semibold translate-y-3 group-hover:translate-y-0 transition-transform duration-500"
-
-                      :class="activeGallery === 1 ? 'translate-y-0' : 'translate-y-3'"
-
-                  >
+                  <p class="text-white text-sm font-semibold">
 
                       Outdoor play time builds confidence and teamwork.
 
@@ -370,13 +402,14 @@
           <!-- IMAGE 2 -->
 
           <div
-
-              class="gallery-card group relative overflow-hidden rounded-lg h-64 lg:h-full lg:row-span-2 border-2 border-transparent transition-all duration-500"
-
-              :class="activeGallery === 2 ? 'border-[#eb81cd]' : ''"
-
-              @click.stop="selectGallery(2)"
-
+              class="gallery-card group relative overflow-hidden rounded-lg h-64 lg:h-full lg:row-span-2 border-2 border-transparent hover:border-[#eb81cd] transition-all duration-500"
+              :class="activePress === 'gallery-2' ? 'border-[#eb81cd]' : ''"
+              @mousedown="startPress('gallery-2')"
+              @touchstart="startPress('gallery-2')"
+              @mouseup="cancelPress"
+              @mouseleave="cancelPress"
+              @touchend="cancelPress"
+              @touchcancel="cancelPress"
           >
 
               <img
@@ -387,7 +420,7 @@
 
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
 
-                  :class="activeGallery === 2 ? 'scale-110' : 'scale-100'"
+                  :class="activePress === 'gallery-2' ? 'scale-110' : 'scale-100'"
 
               >
 
@@ -395,19 +428,11 @@
 
                   class="absolute inset-0 bg-linear-to-t from-[#942173]/40 via-[#eb81cd]/10 to-transparent
 
-                  opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4"
-
-                  :class="activeGallery === 2 ? 'opacity-100' : 'opacity-0'"
+                  opacity-100 flex items-end p-4"
 
               >
 
-                  <p
-
-                      class="text-white text-sm font-semibold translate-y-3 group-hover:translate-y-0 transition-transform duration-500"
-
-                      :class="activeGallery === 2 ? 'translate-y-0' : 'translate-y-3'"
-
-                  >
+                  <p class="text-white text-sm font-semibold">
 
                   Every child gets space to explore and grow.
 
@@ -422,13 +447,14 @@
           <!-- IMAGE 3 -->
 
           <div
-
-              class="gallery-card group relative overflow-hidden rounded-lg h-64 lg:h-70 border-2 border-transparent transition-all duration-500"
-
-              :class="activeGallery === 3 ? 'border-[#eb81cd]' : ''"
-
-              @click.stop="selectGallery(3)"
-
+              class="gallery-card group relative overflow-hidden rounded-lg h-64 lg:h-70 border-2 border-transparent hover:border-[#eb81cd] transition-all duration-500"
+              :class="activePress === 'gallery-3' ? 'border-[#eb81cd]' : ''"
+              @mousedown="startPress('gallery-3')"
+              @touchstart="startPress('gallery-3')"
+              @mouseup="cancelPress"
+              @mouseleave="cancelPress"
+              @touchend="cancelPress"
+              @touchcancel="cancelPress"
           >
 
               <img
@@ -439,7 +465,7 @@
 
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
 
-                  :class="activeGallery === 3 ? 'scale-110' : 'scale-100'"
+                  :class="activePress === 'gallery-3' ? 'scale-110' : 'scale-100'"
 
               >
 
@@ -447,19 +473,11 @@
 
                   class="absolute inset-0 bg-linear-to-t from-[#942173]/40 via-[#eb81cd]/10 to-transparent
 
-                  opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4"
-
-                  :class="activeGallery === 3 ? 'opacity-100' : 'opacity-0'"
+                  opacity-100 flex items-end p-4"
 
               >
 
-                  <p
-
-                      class="text-white text-sm font-semibold translate-y-3 group-hover:translate-y-0 transition-transform duration-500"
-
-                      :class="activeGallery === 3 ? 'translate-y-0' : 'translate-y-3'"
-
-                  >
+                  <p class="text-white text-sm font-semibold">
 
                       Hands-on learning in the classroom.
 
@@ -474,13 +492,14 @@
           <!-- IMAGE 4 -->
 
           <div
-
-              class="gallery-card group relative overflow-hidden rounded-lg h-64 lg:h-70 border-2 border-transparent transition-all duration-500"
-
-              :class="activeGallery === 4 ? 'border-[#eb81cd]' : ''"
-
-              @click.stop="selectGallery(4)"
-
+              class="gallery-card group relative overflow-hidden rounded-lg h-64 lg:h-70 border-2 border-transparent hover:border-[#eb81cd] transition-all duration-500"
+              :class="activePress === 'gallery-4' ? 'border-[#eb81cd]' : ''"
+              @mousedown="startPress('gallery-4')"
+              @touchstart="startPress('gallery-4')"
+              @mouseup="cancelPress"
+              @mouseleave="cancelPress"
+              @touchend="cancelPress"
+              @touchcancel="cancelPress"
           >
 
               <img
@@ -491,7 +510,7 @@
 
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
 
-                  :class="activeGallery === 4 ? 'scale-110' : 'scale-100'"
+                  :class="activePress === 'gallery-4' ? 'scale-110' : 'scale-100'"
 
               >
 
@@ -499,19 +518,11 @@
 
                   class="absolute inset-0 bg-linear-to-t from-[#942173]/40 via-[#eb81cd]/10 to-transparent
 
-                  opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4"
-
-                  :class="activeGallery === 4 ? 'opacity-100' : 'opacity-0'"
+                  opacity-100 flex items-end p-4"
 
               >
 
-                  <p
-
-                      class="text-white text-sm font-semibold translate-y-3 group-hover:translate-y-0 transition-transform duration-500"
-
-                      :class="activeGallery === 4 ? 'translate-y-0' : 'translate-y-3'"
-
-                  >
+                  <p class="text-white text-sm font-semibold">
 
                       Friendships that last a lifetime.
 
@@ -526,13 +537,14 @@
           <!-- IMAGE 5 -->
 
           <div
-
-              class="gallery-card group relative overflow-hidden rounded-lg h-64 lg:h-70 border-2 border-transparent transition-all duration-500"
-
-              :class="activeGallery === 5 ? 'border-[#eb81cd]' : ''"
-
-              @click.stop="selectGallery(5)"
-
+              class="gallery-card group relative overflow-hidden rounded-lg h-64 lg:h-70 border-2 border-transparent hover:border-[#eb81cd] transition-all duration-500"
+              :class="activePress === 'gallery-5' ? 'border-[#eb81cd]' : ''"
+              @mousedown="startPress('gallery-5')"
+              @touchstart="startPress('gallery-5')"
+              @mouseup="cancelPress"
+              @mouseleave="cancelPress"
+              @touchend="cancelPress"
+              @touchcancel="cancelPress"
           >
 
               <img
@@ -543,7 +555,7 @@
 
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
 
-                  :class="activeGallery === 5 ? 'scale-110' : 'scale-100'"
+                  :class="activePress === 'gallery-5' ? 'scale-110' : 'scale-100'"
 
               >
 
@@ -551,19 +563,11 @@
 
                   class="absolute inset-0 bg-linear-to-t from-[#942173]/40 via-[#eb81cd]/10 to-transparent
 
-                  opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4"
-
-                  :class="activeGallery === 5 ? 'opacity-100' : 'opacity-0'"
+                  opacity-100 flex items-end p-4"
 
               >
 
-                  <p
-
-                      class="text-white text-sm font-semibold translate-y-3 group-hover:translate-y-0 transition-transform duration-500"
-
-                      :class="activeGallery === 5 ? 'translate-y-0' : 'translate-y-3'"
-
-                  >
+                  <p class="text-white text-sm font-semibold">
 
                       Celebrating every milestone together.
 
@@ -579,9 +583,18 @@
 
       <div class="text-center mb-30">
 
-        <a href="" class="px-4 py-2 rounded-[5px] border border-[#95357a] text-[#95357a] font-semibold 
-
-        hover:bg-[#942173] hover:text-white transition">View More →</a>
+        <a
+            href=""
+            class="px-4 py-2 rounded-[5px] border border-[#95357a] text-[#95357a] font-semibold 
+            hover:bg-[#942173] hover:text-white transition"
+            :class="activePress === 'btn-view-more' ? 'bg-[#942173] text-white' : ''"
+            @mousedown="startPress('btn-view-more')"
+            @touchstart="startPress('btn-view-more')"
+            @mouseup="cancelPress"
+            @mouseleave="cancelPress"
+            @touchend="cancelPress"
+            @touchcancel="cancelPress"
+        >View More →</a>
 
      </div>
 
@@ -597,15 +610,17 @@
 
           <p class="text-[35px] font-semibold text-[#95357a]">One Journey, from Creche to Secondary School</p>
 
-          <div
-              class="mb-5 flex flex-col px-5 lg:flex-row justify-center lg:mb-15 lg:px-20 py-10 gap-5"
-              @click.self="activeProcess = null"
-          >
+          <div class="mb-5 flex flex-col px-5 lg:flex-row justify-center lg:mb-15 lg:px-20 py-10 gap-5">
 
               <div
-                  class="process-card shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
-                  :class="activeProcess === 1 ? 'border-[#6b064e] scale-103 shadow-lg' : 'border-gray-300'"
-                  @click.stop="selectProcess(1)"
+                  class="shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
+                  :class="activePress === 'process-1' ? 'border-[#6b064e] scale-103 shadow-lg' : ''"
+                  @mousedown="startPress('process-1')"
+                  @touchstart="startPress('process-1')"
+                  @mouseup="cancelPress"
+                  @mouseleave="cancelPress"
+                  @touchend="cancelPress"
+                  @touchcancel="cancelPress"
               >
 
                   <div class="lg:w-60">
@@ -638,9 +653,18 @@
 
                       <div class="text-start mt-4">
 
-                          <a href="" class="border border-red-400 rounded-[5px] py-1 px-2 text-[13px] text-red-400 
-
-                          font-semibold hover:bg-[#942173] hover:border-[#95357a] hover:text-white transition">
+                          <a
+                              href=""
+                              class="border border-red-400 rounded-[5px] py-1 px-2 text-[13px] text-red-400 
+                              font-semibold hover:bg-[#942173] hover:border-[#95357a] hover:text-white transition"
+                              :class="activePress === 'btn-learn-1' ? 'bg-[#942173] border-[#95357a] text-white' : ''"
+                              @mousedown.stop="startPress('btn-learn-1')"
+                              @touchstart.stop="startPress('btn-learn-1')"
+                              @mouseup.stop="cancelPress"
+                              @mouseleave.stop="cancelPress"
+                              @touchend.stop="cancelPress"
+                              @touchcancel.stop="cancelPress"
+                          >
 
                           Learn More →</a>
 
@@ -653,9 +677,14 @@
 
 
               <div
-                  class="process-card shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
-                  :class="activeProcess === 2 ? 'border-[#6b064e] scale-103 shadow-lg' : 'border-gray-300'"
-                  @click.stop="selectProcess(2)"
+                  class="shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
+                  :class="activePress === 'process-2' ? 'border-[#6b064e] scale-103 shadow-lg' : ''"
+                  @mousedown="startPress('process-2')"
+                  @touchstart="startPress('process-2')"
+                  @mouseup="cancelPress"
+                  @mouseleave="cancelPress"
+                  @touchend="cancelPress"
+                  @touchcancel="cancelPress"
               >
 
                   <div class="lg:w-60">
@@ -688,9 +717,18 @@
 
                       <div class="text-start mt-4">
 
-                          <a href="" class="border border-red-400 rounded-[5px] py-1 px-2 text-[13px] text-red-400 
-
-                          font-semibold hover:bg-[#942173] hover:border-[#95357a] hover:text-white transition">
+                          <a
+                              href=""
+                              class="border border-red-400 rounded-[5px] py-1 px-2 text-[13px] text-red-400 
+                              font-semibold hover:bg-[#942173] hover:border-[#95357a] hover:text-white transition"
+                              :class="activePress === 'btn-learn-2' ? 'bg-[#942173] border-[#95357a] text-white' : ''"
+                              @mousedown.stop="startPress('btn-learn-2')"
+                              @touchstart.stop="startPress('btn-learn-2')"
+                              @mouseup.stop="cancelPress"
+                              @mouseleave.stop="cancelPress"
+                              @touchend.stop="cancelPress"
+                              @touchcancel.stop="cancelPress"
+                          >
 
                           Learn More →</a>
 
@@ -703,9 +741,14 @@
 
 
               <div
-                  class="process-card shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
-                  :class="activeProcess === 3 ? 'border-[#6b064e] scale-103 shadow-lg' : 'border-gray-300'"
-                  @click.stop="selectProcess(3)"
+                  class="shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
+                  :class="activePress === 'process-3' ? 'border-[#6b064e] scale-103 shadow-lg' : ''"
+                  @mousedown="startPress('process-3')"
+                  @touchstart="startPress('process-3')"
+                  @mouseup="cancelPress"
+                  @mouseleave="cancelPress"
+                  @touchend="cancelPress"
+                  @touchcancel="cancelPress"
               >
 
                   <div class="lg:w-60">
@@ -738,9 +781,18 @@
 
                       <div class="text-start mt-4">
 
-                          <a href="" class="border border-red-400 rounded-[5px] py-1 px-2 text-[13px] text-red-400 
-
-                          font-semibold hover:bg-[#942173] hover:border-[#95357a] hover:text-white transition">
+                          <a
+                              href=""
+                              class="border border-red-400 rounded-[5px] py-1 px-2 text-[13px] text-red-400 
+                              font-semibold hover:bg-[#942173] hover:border-[#95357a] hover:text-white transition"
+                              :class="activePress === 'btn-learn-3' ? 'bg-[#942173] border-[#95357a] text-white' : ''"
+                              @mousedown.stop="startPress('btn-learn-3')"
+                              @touchstart.stop="startPress('btn-learn-3')"
+                              @mouseup.stop="cancelPress"
+                              @mouseleave.stop="cancelPress"
+                              @touchend.stop="cancelPress"
+                              @touchcancel.stop="cancelPress"
+                          >
 
                           Learn More →</a>
 
@@ -749,9 +801,14 @@
               </div>
 
               <div
-                  class="process-card shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
-                  :class="activeProcess === 4 ? 'border-[#6b064e] scale-103 shadow-lg' : 'border-gray-300'"
-                  @click.stop="selectProcess(4)"
+                  class="shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
+                  :class="activePress === 'process-4' ? 'border-[#6b064e] scale-103 shadow-lg' : ''"
+                  @mousedown="startPress('process-4')"
+                  @touchstart="startPress('process-4')"
+                  @mouseup="cancelPress"
+                  @mouseleave="cancelPress"
+                  @touchend="cancelPress"
+                  @touchcancel="cancelPress"
               >
                   <div class="lg:w-60">
                       <img :src="children3" alt="" class="rounded-xl">
@@ -768,8 +825,18 @@
                           </div>
                       </div>
                       <div class="text-start mt-4">
-                          <a href="" class="border border-red-400 rounded-[5px] py-1 px-2 text-[13px] text-red-400 
-                          font-semibold hover:bg-[#942173] hover:border-[#95357a] hover:text-white transition">
+                          <a
+                              href=""
+                              class="border border-red-400 rounded-[5px] py-1 px-2 text-[13px] text-red-400 
+                              font-semibold hover:bg-[#942173] hover:border-[#95357a] hover:text-white transition"
+                              :class="activePress === 'btn-learn-4' ? 'bg-[#942173] border-[#95357a] text-white' : ''"
+                              @mousedown.stop="startPress('btn-learn-4')"
+                              @touchstart.stop="startPress('btn-learn-4')"
+                              @mouseup.stop="cancelPress"
+                              @mouseleave.stop="cancelPress"
+                              @touchend.stop="cancelPress"
+                              @touchcancel.stop="cancelPress"
+                          >
                           Learn More →</a>
                       </div>
                   </div>
@@ -812,8 +879,18 @@
       </section>
 
   <div class="text-center mb-10">
-      <a href="" class="font-semibold border border-[#95357a] text-[#95357a] px-2 py-3 rounded-[5px] 
-      hover:bg-[#942173] hover:text-white transition">START APPLICATION</a>
+      <a
+          href=""
+          class="font-semibold border border-[#95357a] text-[#95357a] px-2 py-3 rounded-[5px] 
+          hover:bg-[#942173] hover:text-white transition"
+          :class="activePress === 'btn-start-application' ? 'bg-[#942173] text-white' : ''"
+          @mousedown="startPress('btn-start-application')"
+          @touchstart="startPress('btn-start-application')"
+          @mouseup="cancelPress"
+          @mouseleave="cancelPress"
+          @touchend="cancelPress"
+          @touchcancel="cancelPress"
+      >START APPLICATION</a>
   </div>
 
   <section>
@@ -874,20 +951,37 @@ const bgImages = [
     labImage
 ]
 const activeImage = ref(0)
-const activeGallery = ref(null)
-const selectGallery = (index) => {
-    activeGallery.value = activeGallery.value === index ? null : index
-}
-
-// ---------- Process cards tap-toggle (mirrors gallery behavior for mobile) ----------
-const activeProcess = ref(null)
-const selectProcess = (index) => {
-    activeProcess.value = activeProcess.value === index ? null : index
-}
-
 let bgInterval = null
 const cycleBackground = () => {
     activeImage.value = (activeImage.value + 1) % bgImages.length
+}
+
+// ---------- Long-press system (shared by gallery, process, testimonials, buttons) ----------
+// Hold for LONG_PRESS_MS to trigger; once triggered, the active state stays visible
+// for HOLD_DISPLAY_MS even after the finger/mouse is lifted, then reverts automatically.
+const LONG_PRESS_MS = 500
+const HOLD_DISPLAY_MS = 2500
+
+const activePress = ref(null)
+let pressTimer = null
+let revertTimer = null
+
+const startPress = (key) => {
+    cancelPress()
+    pressTimer = setTimeout(() => triggerPress(key), LONG_PRESS_MS)
+}
+const cancelPress = () => {
+    if (pressTimer) {
+        clearTimeout(pressTimer)
+        pressTimer = null
+    }
+}
+const triggerPress = (key) => {
+    activePress.value = key
+    clearTimeout(revertTimer)
+    revertTimer = setTimeout(() => {
+        if (activePress.value === key) activePress.value = null
+    }, HOLD_DISPLAY_MS)
 }
 
 onMounted(() => {
@@ -897,6 +991,8 @@ onMounted(() => {
 onUnmounted(() => {
     window.removeEventListener('scroll', handleScroll)
     clearInterval(bgInterval)
+    clearTimeout(pressTimer)
+    clearTimeout(revertTimer)
 })
 
 // ---------- Stats strip ---------
