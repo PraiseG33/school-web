@@ -597,9 +597,16 @@
 
           <p class="text-[35px] font-semibold text-[#95357a]">One Journey, from Creche to Secondary School</p>
 
-          <div class="mb-5 flex flex-col px-5 lg:flex-row justify-center lg:mb-15 lg:px-20 py-10 gap-5">
+          <div
+              class="mb-5 flex flex-col px-5 lg:flex-row justify-center lg:mb-15 lg:px-20 py-10 gap-5"
+              @click.self="activeProcess = null"
+          >
 
-              <div class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] transition hover:scale-103">
+              <div
+                  class="process-card shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
+                  :class="activeProcess === 1 ? 'border-[#6b064e] scale-103 shadow-lg' : 'border-gray-300'"
+                  @click.stop="selectProcess(1)"
+              >
 
                   <div class="lg:w-60">
 
@@ -607,7 +614,7 @@
 
                   </div>
 
-                  <p class="text-start mt-5 text-red-300 font-semibold text-[12px]">
+                  <p class="text-start mt-5 text-red-400 font-semibold text-[12px]">
 
                       AGES 1-2
 
@@ -631,7 +638,7 @@
 
                       <div class="text-start mt-4">
 
-                          <a href="" class="border border-red-300 rounded-[5px] py-1 px-2 text-[13px] text-red-300 
+                          <a href="" class="border border-red-400 rounded-[5px] py-1 px-2 text-[13px] text-red-400 
 
                           font-semibold hover:bg-[#942173] hover:border-[#95357a] hover:text-white transition">
 
@@ -645,7 +652,11 @@
 
 
 
-              <div class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] transition hover:scale-103">
+              <div
+                  class="process-card shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
+                  :class="activeProcess === 2 ? 'border-[#6b064e] scale-103 shadow-lg' : 'border-gray-300'"
+                  @click.stop="selectProcess(2)"
+              >
 
                   <div class="lg:w-60">
 
@@ -653,7 +664,7 @@
 
                   </div>
 
-                  <p class="text-start mt-5 text-red-300 font-semibold text-[12px]">
+                  <p class="text-start mt-5 text-red-400 font-semibold text-[12px]">
 
                       AGES 3-5
 
@@ -677,7 +688,7 @@
 
                       <div class="text-start mt-4">
 
-                          <a href="" class="border border-red-300 rounded-[5px] py-1 px-2 text-[13px] text-red-300 
+                          <a href="" class="border border-red-400 rounded-[5px] py-1 px-2 text-[13px] text-red-400 
 
                           font-semibold hover:bg-[#942173] hover:border-[#95357a] hover:text-white transition">
 
@@ -691,7 +702,11 @@
 
 
 
-              <div class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] transition hover:scale-103">
+              <div
+                  class="process-card shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
+                  :class="activeProcess === 3 ? 'border-[#6b064e] scale-103 shadow-lg' : 'border-gray-300'"
+                  @click.stop="selectProcess(3)"
+              >
 
                   <div class="lg:w-60">
 
@@ -699,7 +714,7 @@
 
                   </div>
 
-                  <p class="text-start mt-5 text-red-300 font-semibold text-[12px]">
+                  <p class="text-start mt-5 text-red-400 font-semibold text-[12px]">
 
                       AGES 6-10
 
@@ -723,7 +738,7 @@
 
                       <div class="text-start mt-4">
 
-                          <a href="" class="border border-red-300 rounded-[5px] py-1 px-2 text-[13px] text-red-300 
+                          <a href="" class="border border-red-400 rounded-[5px] py-1 px-2 text-[13px] text-red-400 
 
                           font-semibold hover:bg-[#942173] hover:border-[#95357a] hover:text-white transition">
 
@@ -733,11 +748,15 @@
                   </div>
               </div>
 
-              <div class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] transition hover:scale-103">
+              <div
+                  class="process-card shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
+                  :class="activeProcess === 4 ? 'border-[#6b064e] scale-103 shadow-lg' : 'border-gray-300'"
+                  @click.stop="selectProcess(4)"
+              >
                   <div class="lg:w-60">
                       <img :src="children3" alt="" class="rounded-xl">
                   </div>
-                  <p class="text-start mt-5 text-red-300 font-semibold text-[12px]">
+                  <p class="text-start mt-5 text-red-400 font-semibold text-[12px]">
                       AGES 11-16
                   </p>
                   <div>
@@ -749,7 +768,7 @@
                           </div>
                       </div>
                       <div class="text-start mt-4">
-                          <a href="" class="border border-red-300 rounded-[5px] py-1 px-2 text-[13px] text-red-300 
+                          <a href="" class="border border-red-400 rounded-[5px] py-1 px-2 text-[13px] text-red-400 
                           font-semibold hover:bg-[#942173] hover:border-[#95357a] hover:text-white transition">
                           Learn More →</a>
                       </div>
@@ -783,7 +802,7 @@
                       </button>
                       <p
                           v-if="openFaq === index"
-                          class="text-gray-600 font-semibold pb-5 pr-8"
+                          class="text-red-400 font-semibold pb-5 pr-8"
                       >
                           {{ faq.answer }}
                       </p>
@@ -859,6 +878,13 @@ const activeGallery = ref(null)
 const selectGallery = (index) => {
     activeGallery.value = activeGallery.value === index ? null : index
 }
+
+// ---------- Process cards tap-toggle (mirrors gallery behavior for mobile) ----------
+const activeProcess = ref(null)
+const selectProcess = (index) => {
+    activeProcess.value = activeProcess.value === index ? null : index
+}
+
 let bgInterval = null
 const cycleBackground = () => {
     activeImage.value = (activeImage.value + 1) % bgImages.length
