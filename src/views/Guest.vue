@@ -1,93 +1,7 @@
 <template>
 
     <div class="font-body">
-      <nav 
-          class="fixed top-0 left-0 w-full z-50 transition-all"
-          :class="isScrolled 
-          ? 'bg-white shadow-md text-black' 
-          : 'bg-transparent text-white'">
-          <div class="relative z-60 flex items-center justify-between px-5 py-3 lg:justify-center lg:py-2 lg:gap-100"
-          :class="mobileMenuOpen ? 'shadow-sm' : ''">
-              <div><img :src="logo" alt="" class=" w-12 lg:w-17"></div>
-              <div class="flex items-center gap-10 px-1">
-                  <div class="hidden lg:flex gap-8 font-bold">
-                      <a href="" class="hover:text-[#eb81cd] transition hover:scale-103">Home</a>
-                      <a href="" class="hover:text-[#eb81cd] transition hover:scale-103">About</a>
-                      <a href="" class="hover:text-[#eb81cd] transition hover:scale-103">Admission</a>
-                      <a href="" class="hover:text-[#eb81cd] transition hover:scale-103">Academics</a>
-                      <a href="/contact" class="hover:text-[#eb81cd] transition hover:scale-103">Contacts</a>
-                  </div>
-                  <div class="hidden lg:flex bg-linear-to-r from-[#eb81cd] to-[#942173] rounded-[5px] px-4 py-1 
-                  shadow-lg hover:scale-103 hover:to-[#6b064e]">
-                      <a href="" class="font-bold text-white transition">Apply</a>
-                  </div>
-                  <div class="lg:hidden">
-                    <button type="button" @click="mobileMenuOpen = !mobileMenuOpen" aria-label="Toggle menu" 
-                    :aria-expanded="mobileMenuOpen">
-                    <i :class="[mobileMenuOpen ? 'fa fa-navicon text-black' : 'fa fa-navicon text-current']" 
-                    style="font-size:25px"></i>
-                    </button>
-                 </div>
-              </div>
-          </div>
-
-          <!-- Backdrop overlay -->
-          <Transition
-              enter-active-class="transition-opacity duration-300"
-              enter-from-class="opacity-0"
-              enter-to-class="opacity-100"
-              leave-active-class="transition-opacity duration-300"
-              leave-from-class="opacity-100"
-              leave-to-class="opacity-0"
-          >
-              <div
-                  v-if="mobileMenuOpen"
-                  class="lg:hidden fixed inset-0 bg-black/40 z-40"
-                  @click="mobileMenuOpen = false"
-              ></div>
-          </Transition>
-
-          <!-- Mobile side drawer -->
-          <Transition
-              enter-active-class="transition-transform duration-300 ease-out"
-              enter-from-class="translate-y-full"
-              enter-to-class="translate-y-0"
-              leave-active-class="transition-transform duration-300 ease-in"
-              leave-from-class="translate-y-0"
-              leave-to-class="translate-y-full"
-          >
-              <div
-                  v-if="mobileMenuOpen"
-                  class="lg:hidden fixed top-0 right-0 h-screen w-full bg-white text-black flex flex-col gap-1 px-3
-                   py-8 font-bold shadow-lg z-50">
-                 <div class="flex flex-col gap-1 py-11 h-full">
-                     <a href="" class="py-5 px-2 hover:text-[#eb81cd] border-b border-gray-300 transition" 
-                     @click="mobileMenuOpen = false">Home</a>
-                     <a href="" class="py-5 px-2 hover:text-[#eb81cd] border-b border-gray-300 transition" @click="mobileMenuOpen = false">About</a>
-                     <a href="" class="py-5 px-2 hover:text-[#eb81cd] border-b border-gray-300 transition" @click="mobileMenuOpen = false">Admission</a>
-                     <a href="" class="py-5 px-2 hover:text-[#eb81cd] border-b border-gray-300 transition" @click="mobileMenuOpen = false">Academics</a>
-                     <a href="/contact" class="py-5 px-2 hover:text-[#eb81cd] transition" @click="mobileMenuOpen = false">Contacts</a>
-                     <a
-                         href=""
-                         class="mt-auto inline-block text-center text-[#942173] hover:bg-[#942173] hover:text-white 
-                         rounded-[5px] 
-                         px-4 py-2 font-semibold border shadow-lg"
-                         :class="activePress === 'btn-apply-mobile' ? 'bg-[#942173] text-white' : ''"
-                         @mousedown="startPress('btn-apply-mobile')"
-                         @touchstart="startPress('btn-apply-mobile')"
-                         @mouseup="cancelPress"
-                         @mouseleave="cancelPress"
-                         @touchend="cancelPress"
-                         @touchcancel="cancelPress"
-                         @click="mobileMenuOpen = false"
-                     >
-                         Apply Now
-                     </a>
-                 </div>
-              </div>
-
-          </Transition>
-      </nav>
+      <Navbar />
 
       <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
           <div class="absolute inset-0 -z-10">
@@ -613,7 +527,7 @@
           <div class="mb-5 flex flex-col px-5 lg:flex-row justify-center lg:mb-15 lg:px-20 py-10 gap-5">
 
               <div
-                  class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
+                  class="shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
                   :class="activePress === 'process-1' ? 'border-[#6b064e] scale-103 shadow-lg' : ''"
                   @mousedown="startPress('process-1')"
                   @touchstart="startPress('process-1')"
@@ -677,7 +591,7 @@
 
 
               <div
-                  class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
+                  class="shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
                   :class="activePress === 'process-2' ? 'border-[#6b064e] scale-103 shadow-lg' : ''"
                   @mousedown="startPress('process-2')"
                   @touchstart="startPress('process-2')"
@@ -741,7 +655,7 @@
 
 
               <div
-                  class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
+                  class="shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
                   :class="activePress === 'process-3' ? 'border-[#6b064e] scale-103 shadow-lg' : ''"
                   @mousedown="startPress('process-3')"
                   @touchstart="startPress('process-3')"
@@ -801,7 +715,7 @@
               </div>
 
               <div
-                  class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
+                  class="shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
                   :class="activePress === 'process-4' ? 'border-[#6b064e] scale-103 shadow-lg' : ''"
                   @mousedown="startPress('process-4')"
                   @touchstart="startPress('process-4')"
@@ -931,6 +845,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import Navbar from '@/components/Navbar.vue'
 import logo from '@/assets/images/covenant-logo.jpg'
 import schoolImage from '@/assets/images/school.jpg'
 import labImage from '@/assets/images/lab-covenant.jpg'
@@ -940,11 +855,6 @@ import children3 from '@/assets/images/Children3.jpg'
 import children4 from '@/assets/images/Children4.jpg'
 import children5 from '@/assets/images/Children 5.jpg'
 import schoolVideo from '@/assets/images/The Cavemen - Me You I _ Selense Medley (Live Performance) _ Glitch Take Off.mp4'
-const isScrolled = ref(false)
-const mobileMenuOpen = ref(false)
-const handleScroll = () => {
-    isScrolled.value = window.scrollY > 50
-}
 
 const bgImages = [
     schoolImage,
@@ -959,7 +869,7 @@ const cycleBackground = () => {
 // ---------- Long-press system (shared by gallery, process, testimonials, buttons) ----------
 // Hold for LONG_PRESS_MS to trigger; once triggered, the active state stays visible
 // for HOLD_DISPLAY_MS even after the finger/mouse is lifted, then reverts automatically.
-const LONG_PRESS_MS = 100
+const LONG_PRESS_MS = 500
 const HOLD_DISPLAY_MS = 2500
 
 const activePress = ref(null)
@@ -985,11 +895,9 @@ const triggerPress = (key) => {
 }
 
 onMounted(() => {
-    window.addEventListener('scroll', handleScroll)
     bgInterval = setInterval(cycleBackground, 10000)
 })
 onUnmounted(() => {
-    window.removeEventListener('scroll', handleScroll)
     clearInterval(bgInterval)
     clearTimeout(pressTimer)
     clearTimeout(revertTimer)
@@ -1037,7 +945,7 @@ const faqs = [
 </script>
 
 
-<style scoped>
+<style>
 .font-body {
     font-family: 'Bahnschrift', 'Segoe UI Semibold', system-ui, sans-serif;
 }
