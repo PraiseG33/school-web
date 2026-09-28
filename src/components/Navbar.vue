@@ -12,13 +12,13 @@
                 <div class="hidden lg:flex gap-8 font-bold">
                     <router-link to="/" class="hover:text-[#eb81cd] transition hover:scale-103">Home</router-link>
                     <router-link to="/about" class="hover:text-[#eb81cd] transition hover:scale-103">About</router-link>
-                    <router-link to="/admission" class="hover:text-[#eb81cd] transition hover:scale-103">Admission</router-link>
+                    <router-link to="" class="hover:text-[#eb81cd] transition hover:scale-103">Admission</router-link>
                     <router-link to="/academics" class="hover:text-[#eb81cd] transition hover:scale-103">Academics</router-link>
                     <router-link to="/contact" class="hover:text-[#eb81cd] transition hover:scale-103">Contacts</router-link>
                 </div>
                 <div class="hidden lg:flex bg-linear-to-r from-[#eb81cd] to-[#942173] rounded-[5px] px-4 py-1 
                 shadow-lg hover:scale-103 hover:to-[#6b064e]">
-                    <router-link to="/admission" class="font-bold text-white transition">Apply</router-link>
+                    <router-link to="/apply" class="font-bold text-white transition">Apply</router-link>
                 </div>
                 <div class="lg:hidden">
                     <button
@@ -78,7 +78,7 @@
                         @click="mobileMenuOpen = false"
                     >About</router-link>
                     <router-link
-                        to="/admission"
+                        to="/apply"
                         class="py-5 px-2 hover:text-[#eb81cd] border-b border-gray-300 transition"
                         @click="mobileMenuOpen = false"
                     >Admission</router-link>
@@ -93,7 +93,7 @@
                         @click="mobileMenuOpen = false"
                     >Contacts</router-link>
                     <router-link
-                        to="/admission"
+                        to="/apply"
                         class="mt-auto inline-block text-center text-[#942173] hover:bg-[#942173] hover:text-white 
                         rounded-[5px] px-4 py-2 font-semibold border shadow-lg"
                         :class="applyPressActive ? 'bg-[#942173] text-white' : ''"

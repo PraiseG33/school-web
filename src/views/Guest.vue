@@ -31,7 +31,7 @@
           </p>
           <div class="mt-12">
             <a
-              href=""
+              href="/apply"
               class="inline-block px-6 py-4 bg-linear-to-r from-[#95357a] to-blue-00 text-white rounded-lg 
               hover:to-[#6b064e] font-semibold hover:scale-105 transition-all shadow-lg"
               :class="activePress === 'btn-hero-cta' ? 'scale-105 to-[#6b064e]' : ''"
@@ -49,8 +49,8 @@
       </section>
 
       <section>
-          <section>
-             <div class="flex flex-col p-5 lg:flex-row justify-center gap-20 lg:px-20 mt-25 mb-30 bg-pink-50">
+          <section class="bg-pink-50">
+             <div class="flex flex-col p-5 lg:flex-row justify-center gap-20  mt-25 mb-30 max-w-6xl mx-auto">
                  <div class="lg:flex-1">
                    <h1 class="text-[12px] font-extrabold text-[#6b064e]">ABOUT US</h1>
                      <div class="leading-8 text-gray-500 font-semibold">
@@ -78,33 +78,20 @@
   </section>
 
       <!-- ==================== STATS STRIP ==================== -->
-
       <section class="bg-white">
-          <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 px-5 lg:px-20 py-14 text-center">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 px-5 lg:px-20 py-14 text-center max-w-6xl mx-auto">
               <div v-for="stat in stats" :key="stat.label">
-
                   <p class="font-display text-4xl lg:text-5xl font-bold text-[#95357a]">{{ stat.value }}</p>
-
                   <p class="mt-2 text-gray-600 font-semibold text-sm lg:text-base">{{ stat.label }}</p>
-
               </div>
-
           </div>
-
       </section>
 
-
-
   <section>
-
       <div class="text-center">
-
           <h1 class="font-extrabold text-[12px] text-[#6b064e]">TESTIMONIALS</h1>
-
           <p class="text-[35px] font-semibold text-[#95357a]">Parents Comment</p>
-
-          <div class="flex flex-col px-5 lg:flex-row justify-center mb-20 lg:px-20 py-10 gap-5">
-
+          <div class="flex flex-col px-5 lg:flex-row justify-center mb-20 lg:px-2 py-10 gap-5 max-w-6xl mx-auto">
               <div
                   class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] hover:scale-105 hover:shadow-lg transition-all duration-500"
                   :class="activePress === 'testimonial-1' ? 'border-[#6b064e] scale-105 shadow-lg' : ''"
@@ -115,43 +102,23 @@
                   @touchend="cancelPress"
                   @touchcancel="cancelPress"
               >
-
-                  <p class="text-start">
-
+                  <p class="text-start text-[15px]">
                       Covenant has been transformational for my daughter. The teachers genuinely care, 
-
                       the discipline is firm but loving, and the academic results speak for themselves.
-
                   </p>
-
                   <div>
-
                       <div class="flex items-center mt-4 justify-start gap-2">
-
                           <div class="w-11 h-11 rounded-full border bg-[#6b064e] text-white flex items-center 
-
                           justify-center font-semibold">
-
                             <span>DJ</span>
-
                           </div>
-
                           <div class="text-start">
-
                               <h1 class="font-bold text-[#95357a] text-[15px]">David Joseph</h1>
-
-                              <p class="text-[15px] font-semibold text-gray-600">Parent, Covenant International School</p>
-
+                              <p class="text-[13px] font-semibold text-gray-600">Parent, Covenant International School</p>
                           </div>
-
                       </div>
-
                   </div>
-
               </div>
-
-
-
               <div
                   class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] hover:scale-105 hover:shadow-lg transition-all duration-500"
                   :class="activePress === 'testimonial-2' ? 'border-[#6b064e] scale-105 shadow-lg' : ''"
@@ -162,43 +129,23 @@
                   @touchend="cancelPress"
                   @touchcancel="cancelPress"
               >
-
-                  <p class="text-start">
-
+                  <p class="text-start text-[15px]">
                       Covenant has been transformational for my daughter. The teachers genuinely care, 
-
                       the discipline is firm but loving, and the academic results speak for themselves.
-
                   </p>
-
                   <div>
-
                       <div class="flex items-center mt-4 justify-start gap-2">
-
                           <div class="w-11 h-11 rounded-full border bg-[#6b064e] text-white flex items-center 
-
                           justify-center font-semibold">
-
                             <span>DJ</span>
-
                           </div>
-
                           <div class="text-start">
-
                               <h1 class="font-bold text-[#95357a] text-[15px]">David Joseph</h1>
-
-                              <p class="text-[15px] font-semibold text-gray-600">Parent, Covenant International School</p>
-
+                              <p class="text-[13px] font-semibold text-gray-600">Parent, Covenant International School</p>
                           </div>
-
                       </div>
-
                   </div>
-
               </div>
-
-
-
               <div
                   class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] hover:scale-105 hover:shadow-lg transition-all duration-500"
                   :class="activePress === 'testimonial-3' ? 'border-[#6b064e] scale-105 shadow-lg' : ''"
@@ -209,67 +156,34 @@
                   @touchend="cancelPress"
                   @touchcancel="cancelPress"
               >
-
                   <p class="text-start">
-
                       Covenant has been transformational for my daughter. The teachers genuinely care, 
-
                       the discipline is firm but loving, and the academic results speak for themselves.
-
                   </p>
-
                   <div>
-
                       <div class="flex items-center mt-4 justify-start gap-2">
-
                           <div class="w-11 h-11 rounded-full border bg-[#6b064e] text-white flex items-center 
-
                           justify-center font-semibold">
-
                             <span>DJ</span>
-
                           </div>
-
-                          <div class="text-start">
-
+                          <div class="text-start text-[15px]">
                               <h1 class="font-bold text-[#95357a] text-[15px]">David Joseph</h1>
-
-                              <p class="text-[15px] font-semibold text-gray-600">Parent, Covenant International School</p>
-
+                              <p class="text-[13px] font-semibold text-gray-600">Parent, Covenant International School</p>
                           </div>
-
                       </div>
-
                   </div>
-
               </div>
-
           </div>
-
       </div>
-
   </section>
 
-
-
   <section>
-
       <div class="text-center mb-10">
-
            <h1 class="font-extrabold text-[12px] text-[#6b064e]">GALLERY</h1>
-
            <p class="text-[35px] font-semibold text-[#95357a]">Life at Covenant Schools</p>
-
       </div>
-
-
-
-      <div class="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2 gap-5 p-6 lg:p-15">
-
-
-
+      <div class="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2 gap-5 p-6 max-w-6xl mx-auto">
           <!-- IMAGE 1 -->
-
           <div
               class="gallery-card group relative overflow-hidden rounded-lg h-64 lg:h-70 border-2 border-transparent hover:border-[#eb81cd] transition-all duration-500"
               :class="activePress === 'gallery-1' ? 'border-[#eb81cd]' : ''"
@@ -280,41 +194,23 @@
               @touchend="cancelPress"
               @touchcancel="cancelPress"
           >
-
               <img
-
                   :src="children1"
-
                   alt=""
-
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-
                   :class="activePress === 'gallery-1' ? 'scale-110' : 'scale-100'"
-
               >
-
               <div
-
                   class="absolute inset-0 bg-linear-to-t from-[#942173]/40 via-[#eb81cd]/10 to-transparent
 
                   opacity-100 flex items-end p-4"
-
               >
-
                   <p class="text-white text-sm font-semibold">
-
                       Outdoor play time builds confidence and teamwork.
-
                   </p>
-
               </div>
-
           </div>
-
-
-
           <!-- IMAGE 2 -->
-
           <div
               class="gallery-card group relative overflow-hidden rounded-lg h-64 lg:h-full lg:row-span-2 border-2 border-transparent hover:border-[#eb81cd] transition-all duration-500"
               :class="activePress === 'gallery-2' ? 'border-[#eb81cd]' : ''"
@@ -325,41 +221,22 @@
               @touchend="cancelPress"
               @touchcancel="cancelPress"
           >
-
               <img
-
                   :src="children2"
-
                   alt=""
-
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-
                   :class="activePress === 'gallery-2' ? 'scale-110' : 'scale-100'"
-
               >
-
               <div
-
                   class="absolute inset-0 bg-linear-to-t from-[#942173]/40 via-[#eb81cd]/10 to-transparent
-
                   opacity-100 flex items-end p-4"
-
               >
-
                   <p class="text-white text-sm font-semibold">
-
                   Every child gets space to explore and grow.
-
                   </p>
-
               </div>
-
           </div>
-
-
-
           <!-- IMAGE 3 -->
-
           <div
               class="gallery-card group relative overflow-hidden rounded-lg h-64 lg:h-70 border-2 border-transparent hover:border-[#eb81cd] transition-all duration-500"
               :class="activePress === 'gallery-3' ? 'border-[#eb81cd]' : ''"
@@ -370,41 +247,22 @@
               @touchend="cancelPress"
               @touchcancel="cancelPress"
           >
-
               <img
-
                   :src="children3"
-
                   alt=""
-
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-
                   :class="activePress === 'gallery-3' ? 'scale-110' : 'scale-100'"
-
               >
-
               <div
-
                   class="absolute inset-0 bg-linear-to-t from-[#942173]/40 via-[#eb81cd]/10 to-transparent
-
                   opacity-100 flex items-end p-4"
-
               >
-
                   <p class="text-white text-sm font-semibold">
-
                       Hands-on learning in the classroom.
-
                   </p>
-
               </div>
-
           </div>
-
-
-
           <!-- IMAGE 4 -->
-
           <div
               class="gallery-card group relative overflow-hidden rounded-lg h-64 lg:h-70 border-2 border-transparent hover:border-[#eb81cd] transition-all duration-500"
               :class="activePress === 'gallery-4' ? 'border-[#eb81cd]' : ''"
@@ -415,41 +273,22 @@
               @touchend="cancelPress"
               @touchcancel="cancelPress"
           >
-
               <img
-
                   :src="children4"
-
                   alt=""
-
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-
                   :class="activePress === 'gallery-4' ? 'scale-110' : 'scale-100'"
-
               >
-
               <div
-
                   class="absolute inset-0 bg-linear-to-t from-[#942173]/40 via-[#eb81cd]/10 to-transparent
-
                   opacity-100 flex items-end p-4"
-
               >
-
                   <p class="text-white text-sm font-semibold">
-
                       Friendships that last a lifetime.
-
                   </p>
-
               </div>
-
           </div>
-
-
-
           <!-- IMAGE 5 -->
-
           <div
               class="gallery-card group relative overflow-hidden rounded-lg h-64 lg:h-70 border-2 border-transparent hover:border-[#eb81cd] transition-all duration-500"
               :class="activePress === 'gallery-5' ? 'border-[#eb81cd]' : ''"
@@ -460,43 +299,23 @@
               @touchend="cancelPress"
               @touchcancel="cancelPress"
           >
-
               <img
-
                   :src="children5"
-
                   alt=""
-
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-
                   :class="activePress === 'gallery-5' ? 'scale-110' : 'scale-100'"
-
               >
-
               <div
-
                   class="absolute inset-0 bg-linear-to-t from-[#942173]/40 via-[#eb81cd]/10 to-transparent
-
                   opacity-100 flex items-end p-4"
-
               >
-
                   <p class="text-white text-sm font-semibold">
-
                       Celebrating every milestone together.
-
                   </p>
-
               </div>
-
           </div>
-
       </div>
-
-
-
       <div class="text-center mb-30">
-
         <a
             href=""
             class="px-4 py-2 rounded-[5px] border border-[#95357a] text-[#95357a] font-semibold 
@@ -509,23 +328,14 @@
             @touchend="cancelPress"
             @touchcancel="cancelPress"
         >View More →</a>
-
      </div>
-
   </section>
 
-
-
   <section>
-
       <div class="text-center">
-
           <h1 class="font-extrabold text-[12px] text-[#6b064e]">THE PROCESS</h1>
-
           <p class="text-[35px] font-semibold text-[#95357a]">One Journey, from Creche to Secondary School</p>
-
-          <div class="mb-5 flex flex-col px-5 lg:flex-row justify-center lg:mb-15 lg:px-20 py-10 gap-5">
-
+          <div class="mb-5 flex flex-col px-5 lg:flex-row justify-center lg:mb-15 lg:px-20 py-10 gap-5 max-w-6xl mx-auto">
               <div
                   class="shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
                   :class="activePress === 'process-1' ? 'border-[#6b064e] scale-103 shadow-lg' : ''"
@@ -536,37 +346,21 @@
                   @touchend="cancelPress"
                   @touchcancel="cancelPress"
               >
-
                   <div class="lg:w-60">
-
                       <img :src="children3" alt="" class="rounded-xl">
-
                   </div>
-
                   <p class="text-start mt-5 text-red-400 font-semibold text-[12px]">
-
                       AGES 1-2
-
                   </p>
-
                   <div>
-
                       <div class="items-center mt-4 justify-start gap-2">
-
                           <div class="text-start">
-
                               <h1 class="font-bold text-[18px] text-[#95357a]">Creche</h1>
-
                               <p class="text-[14px] font-semibold text-gray-600">Literacy, numeracy and inquiry-based 
-
                                   learning across the core curriculum.</p>
-
                           </div>
-
                       </div>
-
                       <div class="text-start mt-4">
-
                           <a
                               href=""
                               class="border border-red-400 rounded-[5px] py-1 px-2 text-[13px] text-red-400 
@@ -579,17 +373,10 @@
                               @touchend.stop="cancelPress"
                               @touchcancel.stop="cancelPress"
                           >
-
                           Learn More →</a>
-
                       </div>
-
                   </div>
-
               </div>
-
-
-
               <div
                   class="shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
                   :class="activePress === 'process-2' ? 'border-[#6b064e] scale-103 shadow-lg' : ''"
@@ -600,37 +387,21 @@
                   @touchend="cancelPress"
                   @touchcancel="cancelPress"
               >
-
                   <div class="lg:w-60">
-
                       <img :src="children3" alt="" class="rounded-xl">
-
                   </div>
-
                   <p class="text-start mt-5 text-red-400 font-semibold text-[12px]">
-
                       AGES 3-5
-
                   </p>
-
                   <div>
-
                       <div class="items-center mt-4 justify-start gap-2">
-
                           <div class="text-start">
-
                               <h1 class="font-bold text-[18px] text-[#95357a]">Nursery</h1>
-
                               <p class="text-[14px] font-semibold text-gray-600">Literacy, numeracy and inquiry-based 
-
                                   learning across the core curriculum.</p>
-
                           </div>
-
                       </div>
-
                       <div class="text-start mt-4">
-
                           <a
                               href=""
                               class="border border-red-400 rounded-[5px] py-1 px-2 text-[13px] text-red-400 
@@ -643,17 +414,10 @@
                               @touchend.stop="cancelPress"
                               @touchcancel.stop="cancelPress"
                           >
-
                           Learn More →</a>
-
                       </div>
-
                   </div>
-
               </div>
-
-
-
               <div
                   class="shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
                   :class="activePress === 'process-3' ? 'border-[#6b064e] scale-103 shadow-lg' : ''"
@@ -664,37 +428,21 @@
                   @touchend="cancelPress"
                   @touchcancel="cancelPress"
               >
-
                   <div class="lg:w-60">
-
                       <img :src="children3" alt="" class="rounded-xl">
-
                   </div>
-
                   <p class="text-start mt-5 text-red-400 font-semibold text-[12px]">
-
                       AGES 6-10
-
                   </p>
-
                   <div>
-
                       <div class="items-center mt-4 justify-start gap-2">
-
                           <div class="text-start">
-
                               <h1 class="font-bold text-[18px] text-[#95357a]">Primary</h1>
-
                               <p class="text-[14px] font-semibold text-gray-600">Literacy, numeracy and inquiry-based 
-
                                   learning across the core curriculum.</p>
-
                           </div>
-
                       </div>
-
                       <div class="text-start mt-4">
-
                           <a
                               href=""
                               class="border border-red-400 rounded-[5px] py-1 px-2 text-[13px] text-red-400 
@@ -807,46 +555,14 @@
       >START APPLICATION</a>
   </div>
 
-  <section>
-      <div class="flex-col flex px-5 lg:flex-row gap-2 justify-evenly bg-[#6b064e] mt-25 py-10 pb-20">
-          <div>
-              <img :src="logo" alt="" class="w-25">
-          </div>
-          <div class="text-white leading-7">
-              <h1 class="font-bold text-[17px]">Contact</h1>
-              <p>No.4 Okelue Street, Asaba, Nigeria</p>
-              <div class="flex gap-1">
-                  <a href="" class="hover:underline">+234 803 798 2952,</a>
-                  <a href="" class="hover:underline">+234 803 370 5589</a>
-              </div>
-          </div>
-          <div class="text-white leading-7">
-              <h1 class="font-bold text-[17px]">Quick Links</h1>
-              <div>
-                  <div><a href="" class="hover:underline">Student Life</a></div>
-                  <div><a href="" class="hover:underline">Junior Secondary School</a></div>
-                  <div><a href="" class="hover:underline">Senior Secondary School</a></div>
-                  <div><a href="" class="hover:underline">Student Portal</a></div>
-              </div>
-          </div>
-          <div class="text-white leading-7">
-              <h1 class="font-bold text-[17px]">Admissions</h1>
-              <div>
-                  <div><a href="" class="hover:underline">How to Apply</a></div>
-                  <div><a href="" class="hover:underline">Entrance Exams</a></div>
-                  <div><a href="" class="hover:underline">Tuition & Scholarships</a></div>
-                  <div><a href="" class="hover:underline">Parent's Info</a></div>
-              </div>
-          </div>
-      </div>
-  </section>
+  <Footer />
       </div>
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import Navbar from '@/components/Navbar.vue'
-import logo from '@/assets/images/covenant-logo.jpg'
+import Footer from '@/components/Footer.vue'
 import schoolImage from '@/assets/images/school.jpg'
 import labImage from '@/assets/images/lab-covenant.jpg'
 import children1 from '@/assets/images/Children1.jpg'
@@ -945,7 +661,7 @@ const faqs = [
 </script>
 
 
-<style>
+<style scoped>
 .font-body {
     font-family: 'Bahnschrift', 'Segoe UI Semibold', system-ui, sans-serif;
 }
