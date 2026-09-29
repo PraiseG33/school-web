@@ -23,4 +23,10 @@ const router = createRouter({
   routes: routeList,
 })
 
+import AOS from 'aos'
+
+router.afterEach(() => {
+  AOS.refresh()
+})
+
 export default router

@@ -49,7 +49,7 @@
       </section>
 
       <section>
-          <section class="bg-pink-50">
+          <section class="bg-pink-50" data-aos="fade-up">
              <div class="flex flex-col p-5 lg:flex-row justify-center gap-20  mt-25 mb-30 max-w-6xl mx-auto">
                  <div class="lg:flex-1">
                    <h1 class="text-[12px] font-extrabold text-[#6b064e]">ABOUT US</h1>
@@ -78,7 +78,7 @@
   </section>
 
       <!-- ==================== STATS STRIP ==================== -->
-      <section class="bg-white">
+      <section class="bg-white" data-aos="fade-up">
           <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 px-5 lg:px-20 py-14 text-center max-w-6xl mx-auto">
               <div v-for="stat in stats" :key="stat.label">
                   <p class="font-display text-4xl lg:text-5xl font-bold text-[#95357a]">{{ stat.value }}</p>
@@ -90,8 +90,8 @@
   <section>
       <div class="text-center">
           <h1 class="font-extrabold text-[12px] text-[#6b064e]">TESTIMONIALS</h1>
-          <p class="text-[35px] font-semibold text-[#95357a]">Parents Comment</p>
-          <div class="flex flex-col px-5 lg:flex-row justify-center mb-20 lg:px-2 py-10 gap-5 max-w-6xl mx-auto">
+          <p class="text-[35px] font-semibold text-[#95357a]" data-aos="fade-up">Parents Comment</p>
+          <div class="flex flex-col px-5 lg:flex-row justify-center mb-20 lg:px-2 py-10 gap-5 max-w-6xl mx-auto" data-aos="fade-up">
               <div
                   class="shadow-md rounded-[10px] p-5 border border-gray-300 hover:border-[#6b064e] hover:scale-105 hover:shadow-lg transition-all duration-500"
                   :class="activePress === 'testimonial-1' ? 'border-[#6b064e] scale-105 shadow-lg' : ''"
@@ -180,12 +180,13 @@
   <section>
       <div class="text-center mb-10">
            <h1 class="font-extrabold text-[12px] text-[#6b064e]">GALLERY</h1>
-           <p class="text-[35px] font-semibold text-[#95357a]">Life at Covenant Schools</p>
+           <p class="text-[35px] font-semibold text-[#95357a]" data-aos="fade-up">Life at Covenant Schools</p>
       </div>
       <div class="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2 gap-5 p-6 max-w-6xl mx-auto">
           <!-- IMAGE 1 -->
           <div
-              class="gallery-card group relative overflow-hidden rounded-lg h-64 lg:h-70 border-2 border-transparent hover:border-[#eb81cd] transition-all duration-500"
+              class="gallery-card group relative overflow-hidden rounded-lg h-64 lg:h-70 border-2 border-transparent 
+              hover:border-[#eb81cd] transition-all duration-500"
               :class="activePress === 'gallery-1' ? 'border-[#eb81cd]' : ''"
               @mousedown="startPress('gallery-1')"
               @touchstart="startPress('gallery-1')"
@@ -212,7 +213,8 @@
           </div>
           <!-- IMAGE 2 -->
           <div
-              class="gallery-card group relative overflow-hidden rounded-lg h-64 lg:h-full lg:row-span-2 border-2 border-transparent hover:border-[#eb81cd] transition-all duration-500"
+              class="gallery-card group relative overflow-hidden rounded-lg h-64 lg:h-full lg:row-span-2 border-2 border-transparent
+               hover:border-[#eb81cd] transition-all duration-500"
               :class="activePress === 'gallery-2' ? 'border-[#eb81cd]' : ''"
               @mousedown="startPress('gallery-2')"
               @touchstart="startPress('gallery-2')"
@@ -220,6 +222,7 @@
               @mouseleave="cancelPress"
               @touchend="cancelPress"
               @touchcancel="cancelPress"
+              data-aos="fade-up"
           >
               <img
                   :src="children2"
@@ -246,6 +249,7 @@
               @mouseleave="cancelPress"
               @touchend="cancelPress"
               @touchcancel="cancelPress"
+              data-aos="fade-up"
           >
               <img
                   :src="children3"
@@ -272,6 +276,7 @@
               @mouseleave="cancelPress"
               @touchend="cancelPress"
               @touchcancel="cancelPress"
+              data-aos="fade-up"
           >
               <img
                   :src="children4"
@@ -298,6 +303,7 @@
               @mouseleave="cancelPress"
               @touchend="cancelPress"
               @touchcancel="cancelPress"
+              data-aos="fade-up"
           >
               <img
                   :src="children5"
@@ -315,7 +321,7 @@
               </div>
           </div>
       </div>
-      <div class="text-center mb-30">
+      <div class="text-center mb-30" data-aos="fade-up">
         <a
             href=""
             class="px-4 py-2 rounded-[5px] border border-[#95357a] text-[#95357a] font-semibold 
@@ -328,13 +334,13 @@
             @touchend="cancelPress"
             @touchcancel="cancelPress"
         >View More →</a>
-     </div>
+     </div> 
   </section>
 
   <section>
       <div class="text-center">
           <h1 class="font-extrabold text-[12px] text-[#6b064e]">THE PROCESS</h1>
-          <p class="text-[35px] font-semibold text-[#95357a]">One Journey, from Creche to Secondary School</p>
+          <p class="text-[35px] font-semibold text-[#95357a]" data-aos="fade-up">One Journey, from Creche to Secondary School</p>
           <div class="mb-5 flex flex-col px-5 lg:flex-row justify-center lg:mb-15 lg:px-20 py-10 gap-5 max-w-6xl mx-auto">
               <div
                   class="shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
@@ -345,6 +351,7 @@
                   @mouseleave="cancelPress"
                   @touchend="cancelPress"
                   @touchcancel="cancelPress"
+                  data-aos="fade-up"
               >
                   <div class="lg:w-60">
                       <img :src="children3" alt="" class="rounded-xl">
@@ -386,6 +393,7 @@
                   @mouseleave="cancelPress"
                   @touchend="cancelPress"
                   @touchcancel="cancelPress"
+                  data-aos="fade-up"
               >
                   <div class="lg:w-60">
                       <img :src="children3" alt="" class="rounded-xl">
@@ -427,6 +435,7 @@
                   @mouseleave="cancelPress"
                   @touchend="cancelPress"
                   @touchcancel="cancelPress"
+                  data-aos="fade-up"
               >
                   <div class="lg:w-60">
                       <img :src="children3" alt="" class="rounded-xl">
@@ -471,6 +480,7 @@
                   @mouseleave="cancelPress"
                   @touchend="cancelPress"
                   @touchcancel="cancelPress"
+                  data-aos="fade-up"
               >
                   <div class="lg:w-60">
                       <img :src="children3" alt="" class="rounded-xl">

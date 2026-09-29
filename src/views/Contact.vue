@@ -1,8 +1,9 @@
 <template>
+  <div>
   <Navbar solid />
 
   <!-- Hero -->
-  <div class="py-20 bg-linear-to-r to-[#53073e] from-[#eb81cd] w-full">
+  <div class="py-20 bg-linear-to-r to-[#53073e] from-[#eb81cd] pt-40 w-full">
     <div class="px-6 lg:px-24 max-w-6xl mx-auto">
       <div class="flex gap-1 font-semibold text-sm">
         <a href="/" class="text-white/80 hover:text-white transition">Home</a>
@@ -22,6 +23,7 @@
   </div>
 
   <!-- Contact section -->
+   <div class="bg-pink-50">
   <div class="py-16 px-6 lg:px-4 max-w-6xl mx-auto">
     <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 lg:items-start">
 
@@ -35,46 +37,46 @@
         <div class="mt-4 text-[15px] text-[#53073e]">
           <div class="flex gap-3 items-center">
           <div>
-              <img src="/src/assets/images/logo.svg" alt="" class="w-10">
+              <i class="fa fa-envelope w-10 text-center text-2xl text-[#eb81cd]"></i>
           </div>
           <div>
               <p class="font-semibold">
                     General Enquiries
               </p>
-              <a href="" class="text-[#eb81cd]">info@covenantschools.com</a>
+              <a href="mailto:info@covenantschools.com" class="text-[#eb81cd]">info@covenantschools.com</a>
           </div>
         </div>
 
         <div class="flex gap-3 items-center">
           <div>
-              <img src="/src/assets/images/logo.svg" alt="" class="w-10">
+              <i class="fa fa-graduation-cap w-10 text-center text-2xl text-[#eb81cd]"></i>
           </div>
           <div class="mt-2">
               <p class="font-semibold">
                     Admissions
               </p>
-              <a href="" class="text-[#eb81cd]">admissions@covenantschools.com</a>
+              <a href="mailto:admissions@covenantschools.com" class="text-[#eb81cd]">admissions@covenantschools.com</a>
           </div>
         </div>
         <div class="flex gap-3 items-center">
           <div>
-              <img src="/src/assets/images/logo.svg" alt="" class="w-10">
+              <i class="fa fa-clock-o w-10 text-center text-2xl text-[#eb81cd]"></i>
           </div>
           <div class="mt-2">
               <p class="font-semibold">
                     Office Hours
               </p>
-              <a href="" class="text-[#eb81cd]">Monday – Friday: 8:00am – 4:00pm</a>
+              <p class="text-[#eb81cd]">Monday – Friday: 8:00am – 4:00pm</p>
           </div>
         </div>
         </div>
       </div>
 
       <!-- Right: form card -->
-      <div class="lg:w-2/3 w-full border border-gray-200 shadow-md rounded-[20px] p-6 lg:p-8">
+      <div class="lg:w-2/3 w-full border border-gray-200 shadow-md rounded-[20px] bg-white p-6 lg:p-8">
         <h1 class="font-semibold text-lg text-[#53073e] mb-5">Send Us a Message</h1>
 
-        <form class="flex flex-col gap-4">
+        <form class="flex flex-col gap-4" @submit.prevent="handleSubmit">
           <div class="grid grid-cols-1 sm:grid-cols-2  gap-4">
             <div class="flex flex-col">
               <label class="text-[12px] font-semibold text-gray-700">FIRST NAME</label>
@@ -140,7 +142,7 @@
 
           <button
             type="submit"
-            class="mt-2 w-full sm:w-fit self-begin bg-linear-to-r to-[#53073e] from-[#eb81cd]
+            class="mt-2 w-full sm:w-fit self-end bg-linear-to-r to-[#53073e] from-[#eb81cd]
                    text-white font-semibold px-8 py-2.5 rounded-[10px] hover:opacity-90 transition"
           >
             Send Message
@@ -149,6 +151,7 @@
       </div>
     </div>
   </div>
+</div>
 
   <section>
     <div class="text-center px-5 py-14 lg:px-20">
@@ -186,30 +189,32 @@
 <div class="w-full lg:w-2/5 border border-gray-200 rounded-lg p-5 space-y-5">
     <h1 class="font-bold text-lg text-[#6b064e]">Covenant Royal College</h1>
 
-    <div class="flex items-center gap-3">
+    <div class="border-b border-gray-300 flex items-center gap-3 pb-2">
         <!-- <img src="" alt="Address" class="w-6 h-6 shrink-0 mt-1"> -->
         <i class="fa fa-map-marker w-6 text-center text-xl text-red-400 mt-3"></i>
-        <div>
+        <div class="">
             <h2 class="font-bold text-[11px] text-[#95357a] tracking-widest">ADDRESS</h2>
             <p class="text-sm text-gray-600 font-semibold">#4 Okelue Street, opposite Wema Bank, Nnebisi Road, Asaba, Delta State, Nigeria.</p>
         </div>
     </div>
 
-    <div class="flex items-center gap-3">
+    <div class="border-b border-gray-300 flex items-center gap-3 pb-2">
         <!-- <img src="" alt="Phone" class="w-6 h-6 shrink-0 mt-1"> -->
         <i class="fa fa-phone w-6 text-center text-xl text-red-400 mt-3"></i>
-        <div>
+        <div class="w-full">
             <h2 class="font-bold text-[11px] text-[#95357a] tracking-widest">PHONE</h2>
-            <a class="text-sm text-gray-600 font-semibold" href="">08033705589 · 08037982952</a>
+            <a class="text-sm text-gray-600 font-semibold" href="tel:+2348033705589">08033705589</a>
+            <span class="text-sm text-gray-600 font-semibold"> · </span>
+            <a class="text-sm text-gray-600 font-semibold" href="tel:+2348037982952">08037982952</a>
         </div>
     </div>
 
-    <div class="flex items-center gap-3">
+    <div class="border-b border-gray-300 flex items-center gap-3 pb-2">
         <!-- <img src="" alt="Email" class="w-6 h-6 shrink-0 mt-1"> -->
         <i class="fa fa-envelope w-6 text-center text-xl text-red-400 mt-3"></i>
-        <div>
+        <div class=" w-full">
             <h2 class="font-bold text-[11px] text-[#95357a] tracking-widest">EMAIL</h2>
-            <a class="text-sm text-gray-600 font-semibold break-all" href="">info@covenantschools.com</a>
+            <a class="text-sm text-gray-600 font-semibold break-all" href="mailto:info@covenantschools.com">info@covenantschools.com</a>
         </div>
     </div>
 
@@ -221,12 +226,13 @@
    </div>
   </section>
   <Footer />
+</div>
 </template>
 
 <script setup>
 import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref } from 'vue'
 
 const activeFaq = ref(0)
 
@@ -247,4 +253,10 @@ const faqs = [
     },
     // ...same pattern for the rest
 ]
+
+// TODO: wire this up to a real email/backend service. For now this just
+// stops the browser's default full-page-reload form submission.
+const handleSubmit = () => {
+    console.log('Contact form submitted')
+}
 </script>
