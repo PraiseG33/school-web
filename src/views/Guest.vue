@@ -427,7 +427,8 @@
                   </div>
               </div>
               <div
-                  class="shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all duration-500 hover:scale-103"
+                  class="shadow-md rounded-[10px] p-5 border-2 border-gray-300 hover:border-[#6b064e] transition-all 
+                  duration-500 hover:scale-103"
                   :class="activePress === 'process-3' ? 'border-[#6b064e] scale-103 shadow-lg' : ''"
                   @mousedown="startPress('process-3')"
                   @touchstart="startPress('process-3')"

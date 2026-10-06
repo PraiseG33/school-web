@@ -10,11 +10,39 @@
             <div><img :src="logo" alt="" class=" w-12 lg:w-17"></div>
             <div class="flex items-center gap-10 px-1">
                 <div class="hidden lg:flex gap-8 font-bold">
-                    <router-link to="/" class="hover:text-[#eb81cd] transition hover:scale-103">Home</router-link>
-                    <router-link to="/about" class="hover:text-[#eb81cd] transition hover:scale-103">About</router-link>
-                    <router-link to="" class="hover:text-[#eb81cd] transition hover:scale-103">Admission</router-link>
-                    <router-link to="/academics" class="hover:text-[#eb81cd] transition hover:scale-103">Academics</router-link>
-                    <router-link to="/contact" class="hover:text-[#eb81cd] transition hover:scale-103">Contacts</router-link>
+                    <div
+                        v-for="item in navLinks"
+                        :key="item.label"
+                        class="relative"
+                        :class="item.children ? 'group' : ''"
+                    >
+                        <router-link
+                            :to="item.to"
+                            class="hover:text-[#eb81cd] transition hover:scale-103 flex items-center gap-1"
+                        >
+                            {{ item.label }}
+                            <i v-if="item.children" class="fa fa-caret-down text-xs mt-0.5"></i>
+                        </router-link>
+
+                        <!-- Dropdown (desktop, hover-revealed) -->
+                        <div
+                            v-if="item.children"
+                            class="absolute left-1/2 -translate-x-1/2 top-full pt-3 opacity-0 invisible
+                            group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+                        >
+                            <div class="bg-white text-black rounded-lg shadow-lg border border-gray-100 py-2 
+                            min-w-50">
+                                <router-link
+                                    v-for="child in item.children"
+                                    :key="child.label"
+                                    :to="child.to"
+                                    class="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-pink-50 hover:text-[#95357a] transition"
+                                >
+                                    {{ child.label }}
+                                </router-link>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="hidden lg:flex bg-linear-to-r from-[#eb81cd] to-[#942173] rounded-[5px] px-4 py-1 
                 shadow-lg hover:scale-103 hover:to-[#6b064e]">
@@ -67,31 +95,46 @@
                  py-8 font-bold shadow-lg z-50"
             >
                 <div class="flex flex-col gap-1 py-11 h-full">
-                    <router-link
-                        to="/"
-                        class="py-5 px-2 hover:text-[#eb81cd] border-b border-gray-300 transition"
-                        @click="mobileMenuOpen = false"
-                    >Home</router-link>
-                    <router-link
-                        to="/about"
-                        class="py-5 px-2 hover:text-[#eb81cd] border-b border-gray-300 transition"
-                        @click="mobileMenuOpen = false"
-                    >About</router-link>
-                    <router-link
-                        to="/apply"
-                        class="py-5 px-2 hover:text-[#eb81cd] border-b border-gray-300 transition"
-                        @click="mobileMenuOpen = false"
-                    >Admission</router-link>
-                    <router-link
-                        to="/academics"
-                        class="py-5 px-2 hover:text-[#eb81cd] border-b border-gray-300 transition"
-                        @click="mobileMenuOpen = false"
-                    >Academics</router-link>
-                    <router-link
-                        to="/contact"
-                        class="py-5 px-2 hover:text-[#eb81cd] transition"
-                        @click="mobileMenuOpen = false"
-                    >Contacts</router-link>
+                    <div
+                        v-for="(item, index) in navLinks"
+                        :key="item.label"
+                        :class="index < navLinks.length - 1 ? 'border-b border-gray-300' : ''"
+                    >
+                        <div class="flex items-center justify-between">
+                            <router-link
+                                :to="item.to"
+                                class="py-5 px-2 hover:text-[#eb81cd] transition flex-1"
+                                @click="mobileMenuOpen = false"
+                            >{{ item.label }}</router-link>
+                            <button
+                                v-if="item.children"
+                                type="button"
+                                class="px-3 py-5"
+                                aria-label="Toggle submenu"
+                                :aria-expanded="openMobileSubmenu === item.label"
+                                @click="toggleMobileSubmenu(item.label)"
+                            >
+                                <i
+                                    class="fa fa-caret-down transition-transform"
+                                    :class="openMobileSubmenu === item.label ? 'rotate-180' : ''"
+                                ></i>
+                            </button>
+                        </div>
+
+                        <div
+                            v-if="item.children && openMobileSubmenu === item.label"
+                            class="pl-4 pb-3 flex flex-col gap-1"
+                        >
+                            <router-link
+                                v-for="child in item.children"
+                                :key="child.label"
+                                :to="child.to"
+                                class="py-2 text-[15px] font-semibold text-gray-600 hover:text-[#eb81cd] transition"
+                                @click="mobileMenuOpen = false"
+                            >{{ child.label }}</router-link>
+                        </div>
+                    </div>
+
                     <router-link
                         to="/apply"
                         class="mt-auto inline-block text-center text-[#942173] hover:bg-[#942173] hover:text-white 
@@ -133,6 +176,54 @@ const mobileMenuOpen = ref(false)
 
 const handleScroll = () => {
     isScrolled.value = window.scrollY > 50
+}
+
+// ---------- Nav structure ----------
+// `children` is optional: items without it render as a plain link with no
+// dropdown. PLACEHOLDER routes/labels below for About/Admission/Academics —
+// swap these for your real sub-pages once they exist. Admission and
+// Academics reuse the same items currently listed in Footer.vue's
+// "Admissions" and "Quick Links" columns for consistency.
+const navLinks = [
+    { label: 'Home', to: '/' },
+    {
+        label: 'About',
+        to: '/about',
+        children: [
+            { label: 'Our Story', to: '/about#story' },
+            { label: 'Mission & Vision', to: '/about#mission' },
+            { label: 'Our Faculty', to: '/about#faculty' },
+        ],
+    },
+    {
+        label: 'Admission',
+        to: '/apply',
+        children: [
+            { label: 'How to Apply', to: '/apply' },
+            { label: 'Entrance Exams', to: '/apply#exams' },
+            { label: 'Tuition & Scholarships', to: '/apply#tuition' },
+            { label: "Parent's Info", to: '/apply#parent-info' },
+        ],
+    },
+    {
+        label: 'Academics',
+        to: '/academics',
+        children: [
+            { label: 'Student Life', to: '/academics#student-life' },
+            { label: 'Junior Secondary School', to: '/academics#jss' },
+            { label: 'Senior Secondary School', to: '/academics#sss' },
+            { label: 'Student Portal', to: '/academics#portal' },
+        ],
+    },
+    { label: 'Contacts', to: '/contact' },
+]
+
+// ---------- Mobile submenu accordion ----------
+// Tracks which single item's submenu is expanded in the mobile drawer; only
+// one open at a time, same tap-to-toggle pattern used elsewhere on the site.
+const openMobileSubmenu = ref(null)
+const toggleMobileSubmenu = (label) => {
+    openMobileSubmenu.value = openMobileSubmenu.value === label ? null : label
 }
 
 // ---------- Long-press for the mobile "Apply Now" button ----------
