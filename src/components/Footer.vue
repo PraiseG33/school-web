@@ -39,3 +39,4 @@
 <script setup>
 import logo from '@/assets/images/covenant-logo.jpg'
 </script>
+ 

@@ -160,10 +160,6 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import logo from '@/assets/images/covenant-logo.jpg'
 
-// Pass `solid` on pages that don't have a dark hero image behind the navbar
-// (e.g. <Navbar solid />) so it starts white-background/dark-text instead of
-// transparent/white-text. Pages with a hero can omit it to keep the
-// transparent-until-scrolled behavior.
 const props = defineProps({
     solid: {
         type: Boolean,
@@ -178,12 +174,6 @@ const handleScroll = () => {
     isScrolled.value = window.scrollY > 50
 }
 
-// ---------- Nav structure ----------
-// `children` is optional: items without it render as a plain link with no
-// dropdown. PLACEHOLDER routes/labels below for About/Admission/Academics —
-// swap these for your real sub-pages once they exist. Admission and
-// Academics reuse the same items currently listed in Footer.vue's
-// "Admissions" and "Quick Links" columns for consistency.
 const navLinks = [
     { label: 'Home', to: '/' },
     {
@@ -218,18 +208,13 @@ const navLinks = [
     { label: 'Contacts', to: '/contact' },
 ]
 
-// ---------- Mobile submenu accordion ----------
-// Tracks which single item's submenu is expanded in the mobile drawer; only
-// one open at a time, same tap-to-toggle pattern used elsewhere on the site.
+
 const openMobileSubmenu = ref(null)
 const toggleMobileSubmenu = (label) => {
     openMobileSubmenu.value = openMobileSubmenu.value === label ? null : label
 }
 
-// ---------- Long-press for the mobile "Apply Now" button ----------
-// Self-contained so this component works standalone on any page.
-// Hold for LONG_PRESS_MS to trigger; the active state then stays visible
-// for HOLD_DISPLAY_MS even after release, then reverts automatically.
+
 const LONG_PRESS_MS = 500
 const HOLD_DISPLAY_MS = 2500
 

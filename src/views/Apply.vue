@@ -176,8 +176,6 @@
 import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
 
-// TODO: wire this up to a real email/backend service. For now this just
-// stops the browser's default full-page-reload form submission.
 const handleSubmit = () => {
   console.log('Application form submitted')
 }

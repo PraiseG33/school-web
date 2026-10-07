@@ -593,9 +593,6 @@ const cycleBackground = () => {
     activeImage.value = (activeImage.value + 1) % bgImages.length
 }
 
-// ---------- Long-press system (shared by gallery, process, testimonials, buttons) ----------
-// Hold for LONG_PRESS_MS to trigger; once triggered, the active state stays visible
-// for HOLD_DISPLAY_MS even after the finger/mouse is lifted, then reverts automatically.
 const LONG_PRESS_MS = 500
 const HOLD_DISPLAY_MS = 2500
 
